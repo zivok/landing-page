@@ -1,0 +1,19 @@
+.section__image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 450px;
+}
+
+#section1 .section__image {
+    background-image: url("../images/image06.svg");
+}
+
+#section2 .section__image {
+    background-image: url("../images/image10.svg");
+}
+
+#section3 .section__image {
+    background-image: url("../images/image15.svg");
+}

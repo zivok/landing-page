@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Space+Mono&display=swap');
+
+:root {
+    --primary__color: lavender;
+    --primary__light__color: white;
+    --secundary__color: tomato;
+    --text__color: #14182C;
+    --text__muted__color: #6B6B6B;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: var(--text__color);
+    letter-spacing: 1.5px;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    max-width: 800px;
+}
+
+h4, h5 {
+    font-weight: 600;
+    max-width: 640px;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 64px;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 48px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 40px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+h5 {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+h6 {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    max-width: 640px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    max-width: 640px;
+    margin-bottom: 24px;
+    letter-spacing: 1.5px;
+}
+
+span {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: var(--text__muted__color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text__color);
+}
+
+a:hover {
+    color: var(--secundary__color);
+}
+
+.default__btn {
+    font-size: 16px;
+    border: 1px solid var(--text__color);
+    color: var(--text__color);
+    background-color: transparent;
+    padding: .5rem 1rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+    letter-spacing: 1.5px;
+}
+
+.default__btn:hover {
+    cursor: pointer;
+    border: 1px solid var(--secundary__color);
+    color: var(--secundary__color);
+}
+
+.bg__primary {
+    background-color: var(--primary__color);
+}
+
+.bg__secundary {
+    background-color: var(--secundary__color);
+}
