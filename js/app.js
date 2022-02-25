@@ -8,7 +8,7 @@ for (let section of sections) {
     li.appendChild(a);
     menu.appendChild(li);
     a.href = `#${section.id}`;
-    a.textContent = section.id;
+    a.textContent = section.dataset.name;
 }
 nav.appendChild(menu);
 
