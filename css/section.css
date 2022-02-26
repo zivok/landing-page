@@ -22,6 +22,83 @@ section:nth-last-of-type(even) .section__image {
     background-color: #FFF;
 }
 
-section.active__section {
-    background-color: rgb(252, 223, 228);
+/* Animation */
+section:nth-of-type(odd) .section__content::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    width: 10vh;
+    height: 10vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(250, 248, 234, 0.459) 0%, rgba(255, 255, 255, 0.226) 100%);
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) .section__content::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(248, 231, 231, 0.486) 0%, rgba(255, 255, 255, 0.185) 100%);
+    right: 2rem;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) .section__content::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    width: 15vh;
+    height: 15vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(253, 241, 236, 0.438) 0%, rgba(255, 255, 255, 0.26) 100%);
+    left: 6rem;
+    top: 14rem;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) .section__content::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    width: 16vh;
+    height: 16vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(248, 239, 236, 0.39) 0%, rgba(255, 254, 241, 0.425) 100%);
+    top: 12rem;
+    right: 4rem;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section.active__section .section__content::before {
+    opacity: 1;
+    animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.active__section .section__content::after {
+    opacity: 1;
+    animation: rotate 3s linear 0s infinite forwards reverse;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg)
+		           translate(-1em)
+		           rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg)
+		           translate(-1em) 
+		           rotate(-360deg);
+	}
 }
