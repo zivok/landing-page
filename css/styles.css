@@ -9,3 +9,22 @@ body {
     background-color: var(--primary__color);
 }
 
+.backTopBtn {
+    position: fixed;
+    font-size: 24px;
+    bottom: .1rem;
+    right: 50%;
+    background-color: var(--secundary__color);
+    color: var(--primary__light__color);
+    padding: .5rem;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}

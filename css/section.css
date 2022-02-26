@@ -21,3 +21,7 @@ section:nth-last-of-type(even) .section__image {
     border-radius: 30% 70% 0 0;
     background-color: #FFF;
 }
+
+section.active__section {
+    background-color: rgb(252, 223, 228);
+}

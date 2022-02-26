@@ -19,3 +19,44 @@ document.body.addEventListener("click", function(ev) {
         nav.classList.remove("open");
     }
 })
+
+function Interval(element) {
+    this.h1 = element.offsetTop - element.offsetHeight / 2;
+    this.h2 = element.offsetTop + element.offsetHeight / 2;
+}
+
+Interval.prototype.includes = function(value) {
+    return value >= this.h1 && value <= this.h2;
+}
+
+function updateActiveSection() {
+    const currentPosition = document.documentElement.scrollTop;
+    for (let section of sections) {
+        if (new Interval(section).includes(currentPosition)) {
+            section.classList.add("active__section");
+        } else {
+            section.classList.remove("active__section");
+        }
+    }
+}
+
+const backTopBtn = document.querySelector(".backTopBtn");
+
+function updateBackTopBtn() {
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    const maxDistance = vh / 2;
+    if (document.documentElement.scrollTop > maxDistance) {
+        backTopBtn.classList.remove("hidden");
+    } else {
+        backTopBtn.classList.add("hidden");
+    }
+}
+
+document.addEventListener("scroll", function() {
+    updateActiveSection();
+    updateBackTopBtn()
+});
+
+backTopBtn.addEventListener("click", function() {
+    window.scrollTo(0, 0);
+});
