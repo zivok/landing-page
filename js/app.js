@@ -20,19 +20,25 @@ document.body.addEventListener("click", function(ev) {
     }
 })
 
-function Interval(element) {
-    this.h1 = element.offsetTop - element.offsetHeight / 2;
-    this.h2 = element.offsetTop + element.offsetHeight / 2;
+function Interval(values = {}) {
+    const {element, inf, sup} = values;
+    this.inf = element ? element.offsetTop : inf;
+    this.sup = element ? element.offsetTop + element.offsetHeight : sup;
 }
 
 Interval.prototype.includes = function(value) {
-    return value >= this.h1 && value <= this.h2;
+    return value >= this.inf && value <= this.sup;
 }
 
-function updateActiveSection() {
-    const currentPosition = document.documentElement.scrollTop;
+Interval.prototype.displace = function(value) {
+    this.inf += value;
+    this.sup += value;
+    return this;
+}
+
+function updateActiveSection(currentPosition) {
     for (let section of sections) {
-        if (new Interval(section).includes(currentPosition)) {
+        if (new Interval({element: section}).displace(- section.offsetHeight / 2).includes(currentPosition)) {
             section.classList.add("active__section");
         } else {
             section.classList.remove("active__section");
@@ -42,19 +48,21 @@ function updateActiveSection() {
 
 const backTopBtn = document.querySelector(".backTopBtn");
 
-function updateBackTopBtn() {
+function updateBackTopBtn(currentPosition) {
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
     const maxDistance = vh / 2;
-    if (document.documentElement.scrollTop > maxDistance) {
-        backTopBtn.classList.remove("hidden");
+    if (new Interval({inf:maxDistance, sup:sections[sections.length - 1].offsetTop}).includes(currentPosition)) {
+        backTopBtn.classList.add("floating");
     } else {
-        backTopBtn.classList.add("hidden");
+        backTopBtn.classList.remove("floating");
     }
+    
 }
 
 document.addEventListener("scroll", function() {
-    updateActiveSection();
-    updateBackTopBtn()
+    const currentPosition = document.documentElement.scrollTop;
+    updateActiveSection(currentPosition);
+    updateBackTopBtn(currentPosition)
 });
 
 backTopBtn.addEventListener("click", function() {
