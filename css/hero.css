@@ -19,3 +19,21 @@
     border-radius: 40% 60% 0 0;
     background-color: #FFF;
 }
+
+@media(min-width: 650px) {
+    .hero {
+        flex-direction: row;
+    }
+
+    .hero__content {
+        margin: auto;
+    }
+
+    .hero__image {
+        width: 80%;
+        max-width: 600px;
+        height: 100%;
+        border-radius: 40% 0 0 70%;
+        margin: auto;
+    } 
+}

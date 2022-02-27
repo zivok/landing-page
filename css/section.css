@@ -102,3 +102,36 @@ section.active__section .section__content::after {
 		           rotate(-360deg);
 	}
 }
+
+@media(min-width: 650px) {
+    .section__content {
+        margin: auto;
+    }
+
+    section:nth-last-of-type(odd) .section__content {
+        text-align: right;
+    }
+
+    section .section__image {
+        max-width: 600px;
+        width: 80%;
+        height: 75%;
+        margin: auto;
+    }
+
+    section:nth-last-of-type(even) {
+        flex-direction: row;
+    }
+
+    section:nth-last-of-type(odd) {
+        flex-direction: row-reverse;
+    }
+
+    section:nth-last-of-type(even) .section__image {
+        border-radius: 40% 80% 40% 80%;
+    }
+
+    section:nth-last-of-type(odd) .section__image {
+        border-radius: 80% 40% 80% 40%;
+    }
+}

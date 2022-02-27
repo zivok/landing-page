@@ -42,3 +42,21 @@ nav {
     left: 0;
     transition: ease 0.5s all;
 }
+
+@media(min-width: 650px) {
+    .hamburger {
+        display: none;
+    }
+
+    nav{
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: right;
+    }
+}
