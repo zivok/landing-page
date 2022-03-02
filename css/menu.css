@@ -43,7 +43,7 @@ nav {
     transition: ease 0.5s all;
 }
 
-@media(min-width: 650px) {
+@media(min-width: 750px) {
     .hamburger {
         display: none;
     }

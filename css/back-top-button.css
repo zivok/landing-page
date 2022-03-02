@@ -1,0 +1,30 @@
+.backTopBtn__container {
+    background-color: var(--primary__light__color);
+    padding-bottom: 1rem;
+}
+
+.backTopBtn {
+    font-size: 24px;
+    background-color: var(--secundary__color);
+    color: var(--primary__light__color);
+    padding: .5rem;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    text-align: center;
+}
+
+.floating {
+    position: fixed;
+    bottom: .5rem;
+    right: calc(50% - 30px);
+}
+
+@media(min-width: 750px) {
+    .backTopBtn__container {
+        background-color: var(--primary__color);
+        padding-bottom: 1rem;
+    }
+}

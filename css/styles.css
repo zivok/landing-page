@@ -4,40 +4,14 @@
 @import url("./section.css");
 @import url("./footer.css");
 @import url("./menu.css");
+@import url("./back-top-button.css");
 
 body {
     background-color: var(--primary__color);
 }
 
-.backTopBtn__container {
-    background-color: var(--primary__light__color);
-}
-
-.backTopBtn {
-    font-size: 24px;
-    background-color: var(--secundary__color);
-    color: var(--primary__light__color);
-    padding: .5rem;
-    border-radius: 20%;
-    cursor: pointer;
-    width: min-content;
-    margin: auto;
-}
-
-.floating {
-    position: fixed;
-    bottom: .1rem;
-    right: calc(50% - 19px);
-}
-
 html {
 	scroll-behavior: smooth;
-}
-
-@media(min-width: 650px) {
-    main {
-        margin-top: 6rem;
-    }
 }
 
 @media(min-width: 900px) {
