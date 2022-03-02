@@ -1,5 +1,6 @@
 # landing-page
 [Live on :rocket:](https://zivok.github.io/landing-page/)
+
 This is a simple multi-section landing page with the following specification:
 - Dynamic navigation
 - Activate section when it is being viewed
