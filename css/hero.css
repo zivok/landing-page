@@ -33,7 +33,7 @@
         width: 80%;
         max-width: 600px;
         height: 100%;
-        border-radius: 40% 0 0 70%;
+        border-radius: 40% 70% 40% 70%;
         margin: auto;
     } 
 }
