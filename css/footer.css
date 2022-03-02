@@ -1,6 +1,6 @@
 footer {
     background-color: var(--primary__light__color);
-    padding: 2rem;
+    padding: 4rem 0 1rem 0;
 }
 
 footer h6 {
